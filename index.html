@@ -1,53 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content='width=device-width, initial-scale=1' name='viewport'/>
-    <title>Techbern</title>
-    <link rel='stylesheet' href='./CSS/main.css' />
-    <style>
-        
-    </style>
-  </head>
-  <script>
-  // declare the author1 variable (don&#39;t change this. instead, change the value of author1 variable in each post.)
-    let author1 = &quot;<span>Posted by: Ben 10000</span>&quot;;
-  </script>
-<body>
-  <div class='row bodycontainer'>
-      <div class='col col-3 bodyleft'/>
-      <div class='col col-6 bodymain'>
-          <div class='head'>
-              <div class='nav'>
-        	      <ul>
-                      <li><a href=''>Technology</a></li>
-                      <li><a href=''>Shop</a></li>
-                      <li><a href=''>Education</a></li>
-                      <li><a href=''>Languages</a></li>
-                      <li><a href=''>About</a></li>
-                  </ul>
-              </div>
-      	      <div class='titlecontainer'>
-		          <div class='banner'>
-                      <div class='title'><a '/index.html'>Techbern</a></div>
-			      </div>
-          	      <br/>
-        	      <div><span>This blog is a draft. A preview.</span></div>
-              </div>
-          </div>
-          
-          <div class='foot'>
-              <div class='foothead'>
-                  <div class='footerlinks'><p>Copyright 2025 by: Techbern</p></div>
-              </div>
-          </div>
-      </div>
-      <div class='col col-3 bodyright'/>
-  </div>
-  <script>
-      // for changing the contents of #author1
-      document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
-          document.getElementById(&quot;author1&quot;).innerHTML = author1; // this is defined in each post or page
-      });
-  </script>
-</body>
+	<head>
+		<meta content='width=device-width, initial-scale=1' name='viewport'/>
+		<title>Techbern</title>
+		<link rel='stylesheet' href='/z.resources/css/main.css' />
+		<style></style>
+	</head>
+	<body>
+		<div>
+			<div w3-include-html="/head.html"></div>
+			<div w3-include-html="/hero.html"></div>
+			<div w3-include-html="/main.html"></div>
+			<div w3-include-html="/navi.html"></div>
+			<div w3-include-html="/foot.html"></div>
+		</div>
+		<script src="/z.resources/js/html-include.js"></script>
+	</body>
 </html>
