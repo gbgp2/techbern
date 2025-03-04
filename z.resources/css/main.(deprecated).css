@@ -1,0 +1,104 @@
+/* 12-COLUMN GRID SYSTEM */
+
+.row {
+    display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0;
+      padding: 0;
+      }
+
+  .col { padding: 0; }
+
+  .col-1 { grid-column: span 1; }
+  .col-2 { grid-column: span 2; }
+  .col-3 { grid-column: span 3; }
+  .col-4 { grid-column: span 4; }
+  .col-5 { grid-column: span 5; }
+  .col-6 { grid-column: span 6; }
+  .col-7 { grid-column: span 7; }
+  .col-8 { grid-column: span 8; }
+  .col-9 { grid-column: span 9; }
+  .col-10 { grid-column: span 10; }
+  .col-11 { grid-column: span 11; }
+  .col-12 { grid-column: span 12; }
+
+/* DEFAULT STYLES */
+
+  html { font-size: 16px; }
+  html * { 
+      box-sizing: border-box; font-size: 16px;
+      scrollbar-width: thin; scrollbar-color: gray transparent;
+      }
+  h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } h3 { font-size: 1.5rem; } h4 { font-size: 1.25rem; } h5 { font-size: 1.125rem; } h6 { font-size: 1rem; }
+  body { 
+      display: flex;
+      justify-content: center;
+      margin: 0; 
+      line-height: 1.15; 
+      }
+
+/* OTHER STYLES */
+
+  hr { border: 0; border-top: 1px solid black; margin-block-start: 0; margin-block-end: 0; }
+
+  .text-center { text-align: center; }
+
+/* TOPLEVEL CONTAINERS */
+
+  body .bodycontainer{
+    width: 720px;
+      }
+  body .bodyleft {
+      }
+  body .bodymain {
+      }
+  body .bodyright {
+      }
+
+/* CSS for the body */
+
+  .bodymain .head {
+      
+      }
+
+      .bodymain .head .nav {
+          height: 3em;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scrollbar-width: thin;
+          }
+
+          .bodymain .head .nav ul { 
+              height: inherit;
+              padding:0; 
+              margin:0; 
+              white-space:nowrap; 
+              }
+
+              .bodymain .head .nav ul li { 
+                  height: inherit;
+                  width: auto;
+                  margin: 0 2px;
+                  list-style-type:none;
+                  display: inline-block;
+                  }
+
+                  .bodymain .head .nav ul li a {
+                      height: inherit;
+                      display: flex;
+                      align-items: center;
+                      }
+
+      .bodymain .head .titlecontainer {}
+          
+          .bodymain .head .titlecontainer .banner {
+              width: 100%;
+              height: 150px; /* height of the title image */
+              background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA_Cv-kvNMy2l39gpDgeAdP_VXxDVXlQ_LXIgUliSBWQWEmQR2DjCwHuWCAOet0bWFjzk0BYnTSMSxmvug1lmygZu6CdG6-dYvhEltnumuUqv1qbz2mnl1B28PBXnuL2AU6S-TUb0oY6_JSslJIza7hKGpcSormpve-eMN3v7Fz65Po4VcUn0WYta24BQ/s320/channels4_banner.jpg') center/cover no-repeat;
+              }
+
+              .bodymain .head .titlecontainer .banner .title {
+                  height: inherit;
+                  display: flex;
+                  align-items: end;
+                  }
