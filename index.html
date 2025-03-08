@@ -5,6 +5,21 @@
 		<title>Techbern</title>
 		<link rel='stylesheet' href='./z.resources/css/main.css' />
 		<style></style>
+		<script src="./z.resources/js/permalink-array.js"></script>
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+      		const permalink = urlParams.get('permalink');
+
+      		if (permalink == null) {
+				// do nothing
+      		}else{
+				if (permalinks[permalink]) {
+        			window.location.href = permalinks[permalink];
+      			} else {
+        			window.location.href = './404/';
+      			}
+	  		}
+		</script>
 	</head>
 	<body>
 		<div>
@@ -17,5 +32,8 @@
 			<div w3-include-html="./foot.html"></div>
 		</div>
 		<script src="./z.resources/js/html-include.js"></script>
+		<script>
+			includeHTML();  // calling from html-include.js
+		</script>
 	</body>
 </html>
