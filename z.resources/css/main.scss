@@ -1,3 +1,48 @@
+/* DEFAULT STYLES */
+
+    html { font-size: 16px; }
+    html * { 
+        box-sizing: border-box; font-size: 1rem;
+        scrollbar-width: thin; scrollbar-color: gray transparent;
+    }
+    h1, h2, h3, h4, h5, h6, p { margin-block-start: 0; margin-block-end: 0;}
+        h1 { font-size: 1.625rem; } 
+        h2 { font-size: 1.5rem; } 
+        h3 { font-size: 1.375rem; } 
+        h4 { font-size: 1.25rem; } 
+        h5 { font-size: 1.125rem; } 
+        h6 { font-size: 1rem; }
+        p { font-size: 1rem; }
+    body {
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+        margin: 0; 
+        padding: 0px;
+        line-height: 1.15;
+    }
+
+    /* 12-COLUMN GRID SYSTEM */
+
+        .row {
+            display: grid;
+            max-width: 1280px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 0;
+            padding: 0;
+        }
+
+        .col-1 { margin: 5px; grid-column: span 1; }
+        .col-2 { margin: 5px; grid-column: span 2; }
+        .col-3 { margin: 5px; grid-column: span 3; }
+        .col-4 { margin: 5px; grid-column: span 4; }
+        .col-5 { margin: 5px; grid-column: span 5; }
+        .col-6 { margin: 5px; grid-column: span 6; }
+        .col-7 { margin: 5px; grid-column: span 7; }
+        .col-8 { margin: 5px; grid-column: span 8; }
+        .col-9 { margin: 5px; grid-column: span 9; }
+        .col-10 { margin: 5px; grid-column: span 10; }
+        .col-11 { margin: 5px; grid-column: span 11; }
+        .col-12 { margin: 5px; grid-column: span 12; }
+
 /* STYLES */
     .headcontainer {
         .sitelogocontainer {
@@ -49,6 +94,9 @@
     .maincontainer {
         .mainleft, .mainright {
             margin: 5px 0;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid darkslategray;
+            border-bottom: 0;
         }
         .main {
             padding: 5px;
@@ -98,47 +146,3 @@
         }
     }
 
-/* DEFAULT STYLES */
-
-    html { font-size: 24px; }
-    html * { 
-        box-sizing: border-box; font-size: 1rem;
-        scrollbar-width: thin; scrollbar-color: gray transparent;
-    }
-    h1, h2, h3, h4, h5, h6, p { margin-block-start: 0; margin-block-end: 0;}
-        h1 { font-size: 2.25rem; } 
-        h2 { font-size: 2rem; } 
-        h3 { font-size: 1.75rem; } 
-        h4 { font-size: 1.5rem; } 
-        h5 { font-size: 1.25rem; } 
-        h6 { font-size: 1rem; }
-        p { font-size: 1rem; }
-    body {
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        margin: 0; 
-        padding: 0px;
-        line-height: 1.15;
-    }
-
-/* 12-COLUMN GRID SYSTEM */
-
-    .row {
-        display: grid;
-        max-width: 1280px;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 0;
-        padding: 0;
-    }
-
-    .col-1 { margin: 5px; grid-column: span 1; }
-    .col-2 { margin: 5px; grid-column: span 2; }
-    .col-3 { margin: 5px; grid-column: span 3; }
-    .col-4 { margin: 5px; grid-column: span 4; }
-    .col-5 { margin: 5px; grid-column: span 5; }
-    .col-6 { margin: 5px; grid-column: span 6; }
-    .col-7 { margin: 5px; grid-column: span 7; }
-    .col-8 { margin: 5px; grid-column: span 8; }
-    .col-9 { margin: 5px; grid-column: span 9; }
-    .col-10 { margin: 5px; grid-column: span 10; }
-    .col-11 { margin: 5px; grid-column: span 11; }
-    .col-12 { margin: 5px; grid-column: span 12; }
