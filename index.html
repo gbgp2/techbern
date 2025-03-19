@@ -5,35 +5,22 @@
 		<title>Techbern</title>
 		<link rel='stylesheet' href='./z.resources/css/main.css' />
 		<style></style>
-		<script src="./z.resources/js/permalink-array.js"></script>
-		<script>
-			const urlParams = new URLSearchParams(window.location.search);
-      		const permalink = urlParams.get('permalink');
-
-      		if (permalink == null) {
-				// do nothing
-      		}else{
-				if (permalinks[permalink]) {
-        			window.location.href = permalinks[permalink];
-      			} else {
-        			window.location.href = './404/';
-      			}
-	  		}
-		</script>
+		<script src='./z.resources/js/p-permalinks-array.js'></script>
+		<script src='./z.resources/js/p-permalink-detect-root.js'></script>
 	</head>
 	<body>
 		<div>
-			<div w3-include-html="./head.html"></div>
-			<div w3-include-html="./hero.html"></div>
-			<div w3-include-html="./bodyopenspacecontainer.html"></div>
-			<div w3-include-html="./navi.html"></div>
-			<div w3-include-html="./bodyclosespacecontainer.html"></div>
-			<div w3-include-html="./main.html"></div>
-			<div w3-include-html="./foot.html"></div>
+			<div w3-include-html="./y.index/head.html"></div>
+			<div w3-include-html="./y.index/hero.html"></div>
+			<div w3-include-html="./y.index/bodyopenspacecontainer.html"></div>
+			<div w3-include-html="./y.index/navi.html"></div>
+			<div w3-include-html="./y.index/bodyclosespacecontainer.html"></div>
+			<div w3-include-html="./y.index/main.html"></div>
+			<div w3-include-html="./y.index/foot.html"></div>
 		</div>
 		<script src="./z.resources/js/html-include.js"></script>
 		<script>
-			includeHTML();  // calling from html-include.js
+			includeHTML();
 		</script>
 	</body>
 </html>
