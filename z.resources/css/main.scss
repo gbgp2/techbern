@@ -1,4 +1,13 @@
-/* Variables use in this stylesheet */
+/* variables for thenewwebsite */
+$thenewwebsite-width: 100%;
+$thenewwebsite-height: 100vh;
+$thenewwebsite-border: 1px solid black;
+$thenewwebsite-color: rgb(15, 83, 150);
+$thenewwebsite-color-lighter: dodgerblue;
+$masthead-bg: $thenewwebsite-color;
+$masthead-height: 3rem;
+
+/* Variables used in this stylesheet */
 $h1-font-size: 1.625rem;
 $h2-font-size: 1.5rem;
 $h3-font-size: 1.375rem;
@@ -36,10 +45,7 @@ html {
     /* DEFAULT STYLES */    
     font-size: 16px;
 
-    * { 
-        box-sizing: border-box; font-size: 1rem;
-        overflow: auto; scrollbar-width: thin; scrollbar-color: gray transparent;
-    }
+    
 
     body {
         display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -47,39 +53,152 @@ html {
         padding: 0px;
         line-height: 1.15;
 
-        h1, h2, h3, h4, h5, h6, p { margin-block-start: 0; margin-block-end: 0;}
-        h1 { font-size: $h1-font-size; } 
-        h2 { font-size: $h2-font-size; } 
-        h3 { font-size: $h3-font-size; } 
-        h4 { font-size: $h4-font-size; } 
-        h5 { font-size: $h5-font-size; } 
-        h6 { font-size: $h6-font-size; }
-        p { font-size: $p-font-size; }
+        * { 
+            box-sizing: border-box; font-size: 1rem;
+        }
 
-        div {
+
+        .spacer-3px {
+            height: 3px;
+            background-color: $thenewwebsite-color;
+        }
+
+        .spacer-3px-lighter {
+            height: 3px;
+            background-color: $thenewwebsite-color-lighter;
+        }
+
+        .scrollbars {
+            overflow: auto; scrollbar-width: thin; scrollbar-color: gray transparent;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        .block-container {
+            display: block;
+        }
+
+        .inblock-container {
+            display: inline-block;
+        }
+
+        .hidden-container {
+            display: none;
+        }
+
+        
+
+            /* 12-COLUMN GRID SYSTEM */
+            .row {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+                gap: 0;
+                padding: 0;
+
+                .col-1 {grid-column: span 1; }
+                .col-2 {grid-column: span 2; }
+                .col-3 {grid-column: span 3; }
+                .col-4 {grid-column: span 4; }
+                .col-5 {grid-column: span 5; }
+                .col-6 {grid-column: span 6; }
+                .col-7 {grid-column: span 7; }
+                .col-8 {grid-column: span 8; }
+                .col-9 {grid-column: span 9; }
+                .col-10 {grid-column: span 10; }
+                .col-11 {grid-column: span 11; }
+                .col-12 {grid-column: span 12; }
+            }
+
+            @media (min-width: 720px) { /* phone landscape or tablet */
+                .thenewwebsite .row .row:nth-of-type(1) {
+                    grid-template-columns: repeat(3, 1fr); /* 4 columns */
+                }
+            }
+            @media (min-width: 1080px) { /* Tablet & larger screens */
+                .thenewwebsite .row .row:nth-of-type(1) {
+                    grid-template-columns: repeat(9, 1fr); /* 4 columns */
+                }
+            }
+            @media (min-width: 1680px) { /* Tablet & larger screens */
+                .thenewwebsite .row .row:nth-of-type(1) {
+                    grid-template-columns: repeat(7, 1fr); /* 4 columns */
+                }
+            }
+
+        .thenewwebsite {
+            width: $thenewwebsite-width;
+            height: $thenewwebsite-height;
+            border: $thenewwebsite-border;
+
+            .a-head-masthead {
+                background-color: $masthead-bg;
+                gap: 0.5rem;
+                align-items: center;
+                height: $masthead-height;
+
+                .masthead-height {
+                    height: $masthead-height;
+                }
+
+                .masthead-i-radius {
+                    border-radius: 20px;
+                }
+
+                .masthead-b-radius {
+                    border-radius: 10px;
+                }
+
+                img {
+                    width: auto;
+                    height: $masthead-height;
+                    object-fit: scale-down;
+                }
+
+                button {
+                    border: 1px;
+                }
+                .search-input-container {
+                    width: 100%;
+                    input {
+                        height: $masthead-height;
+                        width: 100%;
+                        padding: 0.5rem;
+                        border: 0;
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .theoldwebsite {
             div {
                 /* 12-COLUMN GRID SYSTEM */
                 .row {
                     display: grid;
-                    max-width: 1280px;
                     grid-template-columns: repeat(12, 1fr);
                     gap: 0;
                     padding: 0;
+
+                    .col-1 { margin: 5px; grid-column: span 1; }
+                    .col-2 { margin: 5px; grid-column: span 2; }
+                    .col-3 { margin: 5px; grid-column: span 3; }
+                    .col-4 { margin: 5px; grid-column: span 4; }
+                    .col-5 { margin: 5px; grid-column: span 5; }
+                    .col-6 { margin: 5px; grid-column: span 6; }
+                    .col-7 { margin: 5px; grid-column: span 7; }
+                    .col-8 { margin: 5px; grid-column: span 8; }
+                    .col-9 { margin: 5px; grid-column: span 9; }
+                    .col-10 { margin: 5px; grid-column: span 10; }
+                    .col-11 { margin: 5px; grid-column: span 11; }
+                    .col-12 { margin: 5px; grid-column: span 12; }
                 }
-
-                .col-1 { margin: 5px; grid-column: span 1; }
-                .col-2 { margin: 5px; grid-column: span 2; }
-                .col-3 { margin: 5px; grid-column: span 3; }
-                .col-4 { margin: 5px; grid-column: span 4; }
-                .col-5 { margin: 5px; grid-column: span 5; }
-                .col-6 { margin: 5px; grid-column: span 6; }
-                .col-7 { margin: 5px; grid-column: span 7; }
-                .col-8 { margin: 5px; grid-column: span 8; }
-                .col-9 { margin: 5px; grid-column: span 9; }
-                .col-10 { margin: 5px; grid-column: span 10; }
-                .col-11 { margin: 5px; grid-column: span 11; }
-                .col-12 { margin: 5px; grid-column: span 12; }
-
                 /* The following are the css for my blog */
                 .headcontainer {
                     background-color: $head-background-color;

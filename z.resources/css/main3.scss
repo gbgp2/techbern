@@ -1,0 +1,152 @@
+/* variables */
+$thenewwebsite-height: 100vh;
+$thenewwebsite-width: 100vw;
+$thenewwebsite-color: white;
+$masthead-bg: #424658;
+$masthead-bg-light: #BABBB1;
+$masthead-height: 3rem;
+
+/* mixins */
+@mixin font-sizes {
+    h1, h2, h3, h4, h5, h6, p { margin: 0;}
+    h1 { font-size: 1.625rem; } 
+    h2 { font-size: 1.5rem; } 
+    h3 { font-size: 1.375rem; } 
+    h4 { font-size: 1.25rem; } 
+    h5 { font-size: 1.125rem; } 
+    h6 { font-size: 1rem; }
+    p { font-size: 1rem; }
+}
+
+@mixin spacers ($height, $color, $color-lighter)  {
+    .spacer-#{$height}-masthead {
+        height: $height;
+        background-color: $color;
+    }
+
+    .spacer-#{$height}-l-masthead {
+        height: $height;
+        background-color: $color-lighter;
+    }
+}
+
+@mixin container-types {
+    .dflex {
+        display: flex;
+    }
+    .dblock {
+        display: block;
+    }
+    .dinblock {
+        display: inline-block;
+    }
+    .dhidden {
+        display: none;
+    }
+}
+
+@mixin dflex-columns ($columns, $percent) {
+    .col-#{$columns} {
+        flex: 0 0 calc(#{$columns}#{$percent});
+    }
+}
+
+@mixin flex-row-justify {
+    .flex-row-j-sb {
+        justify-content: space-between;
+    }
+    .flex-row-j-cc {
+        justify-content: center;
+    }
+}
+
+@mixin flex-row-align {
+    .flex-row-a-cc {
+        align-items: center;
+    }
+}
+
+html {
+    font-size: 16px;
+
+    body {
+        margin: 0; 
+        padding: 0;
+        line-height: 1.15;
+
+        * { 
+            box-sizing: border-box; font-size: 1rem;
+        }
+
+        @include spacers(3px, $masthead-bg, $masthead-bg-light);
+
+        @include container-types();
+
+        @include font-sizes();
+
+        .flex-row {
+            flex-wrap: wrap;
+            gap: 0;
+            padding: 0;
+
+            /* single row */
+            @include dflex-columns("100","%");
+
+            /* double row 240px, 480px */
+            @include dflex-columns("100","%");
+            @include dflex-columns("100","%");
+
+            /* triple normal mid 240px, 600px, 240px */
+            @include dflex-columns("100","%");
+            @include dflex-columns("100","%");
+            @include dflex-columns("100","%");
+
+            /* triple large mid 240px, 480px */
+            @include dflex-columns("100","%");
+            @include dflex-columns("100","%");
+            @include dflex-columns("100","%");
+        }
+
+        @include flex-row-justify();
+
+        @include flex-row-align();
+
+        .a-head {
+            background-color: $masthead-bg;
+            width: 100%;
+
+            .masthead-height {
+                height: $masthead-height;
+            }
+
+            .websitelogo {
+                height: $masthead-height;
+                object-fit: scale-down;
+            }
+
+            .searchbar {
+                height: calc(#{$masthead-height} - 3px);
+                border-radius: 30px;
+                border: 1px solid gray;
+                padding: 0 5px;
+            }
+        }
+
+        .f-cont {
+            .middle {
+                background-color: $thenewwebsite-color;
+
+                @media (min-width: 720px) {
+                    background-color: red;
+                }
+            }
+        }
+
+        .k-foot {
+            background-color: $masthead-bg;
+            width: 100%;
+            color: white;
+        }
+
+    }
+}
