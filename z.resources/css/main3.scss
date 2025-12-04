@@ -1,9 +1,12 @@
 /* variables */
+$default-bg-color: #424658;
+$default-bg-color-l: #BABBB1;
+$default-fg-color: white;
+$default-text-color-dark: white;
+$default-text-color-light: black;
+
 $thenewwebsite-height: 100vh;
 $thenewwebsite-width: 100vw;
-$thenewwebsite-color: white;
-$masthead-bg: #424658;
-$masthead-bg-light: #BABBB1;
 $masthead-height: 3rem;
 
 /* mixins */
@@ -37,7 +40,7 @@ $masthead-height: 3rem;
     .dblock {
         display: block;
     }
-    .dinblock {
+    .dblockin {
         display: inline-block;
     }
     .dhidden {
@@ -78,7 +81,7 @@ html {
             box-sizing: border-box; font-size: 1rem;
         }
 
-        @include spacers(3px, $masthead-bg, $masthead-bg-light);
+        @include spacers(3px, $default-bg-color, $default-bg-color-l);
 
         @include container-types();
 
@@ -93,18 +96,18 @@ html {
             @include dflex-columns("100","%");
 
             /* double row 240px, 480px */
-            @include dflex-columns("100","%");
-            @include dflex-columns("100","%");
+            @include dflex-columns("33","%");
+            @include dflex-columns("67","%");
 
-            /* triple normal mid 240px, 600px, 240px */
-            @include dflex-columns("100","%");
-            @include dflex-columns("100","%");
-            @include dflex-columns("100","%");
+            /* triple normal mid 300px, 600px, 300px */
+            @include dflex-columns("25","%");
+            @include dflex-columns("50","%");
+            @include dflex-columns("25","%");
 
-            /* triple large mid 240px, 480px */
-            @include dflex-columns("100","%");
-            @include dflex-columns("100","%");
-            @include dflex-columns("100","%");
+            /* triple large mid 300px, 1200px, 300px */
+            @include dflex-columns("16","%");
+            @include dflex-columns("68","%");
+            @include dflex-columns("16","%");
         }
 
         @include flex-row-justify();
@@ -112,7 +115,7 @@ html {
         @include flex-row-align();
 
         .a-head {
-            background-color: $masthead-bg;
+            background-color: $default-bg-color;
             width: 100%;
 
             .masthead-height {
@@ -134,16 +137,31 @@ html {
 
         .f-cont {
             .middle {
-                background-color: $thenewwebsite-color;
+                background-color: $default-fg-color;
 
-                @media (min-width: 720px) {
-                    background-color: red;
+                .navi {
+                    .card {
+                        width: 360px;
+
+                        // if 720px screens size, same
+
+                        @media (min-width: 1080px) {
+                            /* this is a template for when screen size is bigger */
+                            // width: 300px;
+                        }
+
+                        img {
+                            width: inherit;
+                            height: auto;
+                        }
+                    }
                 }
+
             }
         }
 
         .k-foot {
-            background-color: $masthead-bg;
+            background-color: $default-bg-color;
             width: 100%;
             color: white;
         }
